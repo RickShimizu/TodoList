@@ -3,7 +3,7 @@ import styles from './App.module.css'
 import { useState, useEffect } from 'react';
 import { BsTrash, BsBookmarkCheck, BsBookmarkCheckFill } from 'react-icons/bs'
 
-const API = 'http://localhost:5000'
+const API = 'https://todo-list-api-topaz.vercel.app/todos'
 
 function App() {
 
@@ -18,7 +18,7 @@ function App() {
     const loadData = async () => {
       setLoading(true);
 
-      const res = await fetch(API + '/todos')
+      const res = await fetch(API)
         .then((res) => res.json())
         .then((data) => data)
         .catch((err) => console.log(err))
